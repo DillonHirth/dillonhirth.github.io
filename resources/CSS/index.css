@@ -1,57 +1,59 @@
 :root {
     --text-color: #000000;
-  }
+}
 
 * {
     font-family: Helvetica, Arial, sans-serif;
     background-color: #FEB5AE;
-    --text-color: #000000;
-    }
+}
    
 h1 {
     color: var(--text-color);
-    background-color: #00CCB4;
+    background-color: rgb(0,204,180);
     text-align: center;
     width: 220px;
     margin: 10px 5px 10px 5px;
     padding: 8px 4px 8px 4px;
-    }
+    font-size: 24px;
+}
    
 p, li {
     font-size: 18px;
     color: var(--text-color);
     background-color: #84ACCE;
-    }   
+}   
 
 a {
     text-decoration: none;
     color: var(--text-color);
-    }
+    background-color: rgba(45, 45, 45, 0.5);
+}
+
 .injected-text {
     margin-bottom: -25px;
     text-align: center;
-    }
+}
 
-    .box {
+.box {
     border-style: solid;
     border-color: black;
     border-width: 5px;
     text-align: center;
-    }
+}
 
-    .yellow-box {
+.yellow-box {
     background-color: yellow;
     padding: 10px;
-    }
+}
 
-    .red-box {
+.red-box {
     background-color: crimson;
     color: #fff;
     padding: 20px;
-    }
+}
 
-    .blue-box {
+.blue-box {
     background-color: blue;
     color: #fff;
     padding: 10px;
-    }
+}
