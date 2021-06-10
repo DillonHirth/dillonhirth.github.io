@@ -4,7 +4,6 @@
 
 * {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: #FEB5AE;
 }
    
 h1 {
@@ -17,46 +16,40 @@ h1 {
     font-size: 24px; 
     text-transform: uppercase; /* forces uppercase, lowercase etc */
     font-weight: 100; /* thickness of the font */
-    position: fixed; /* One key difference between the fixed and absolute positions is that an element with a fixed position won't move when the user scrolls.*/
+    /* position: fixed; One key difference between the fixed and absolute positions is that an element with a fixed position won't move when the user scrolls. */
 }
 h1:hover {
     background-color: #84ACCE;
 }
+header {
+    background-color: hsl(180, 90%, 35%);
+    color: #FFFFFF;
+}
 #navbar {
-
     position: fixed;
     top: 0px;
     left: 0px;
-
     width: 100%;
-    background-color: #767676;
-  }
-  nav ul {
+    background-color: hsl(180, 80%, 25%);
+}
+nav ul {
     margin: 0px;
     padding: 5px 0px 5px 30px;
-  }
-  nav li {
+    background-color: hsl(180, 80%, 25%);
+}
+nav li {
     display: inline;
     margin-right: 20px;
-  }
-p, li {
-    font-size: 18px;
-    color: var(--text-color);
-    background-color: #84ACCE;
-    line-height: 125%; /* the amount of vertical space for each line. % or px */
-    position: relative;
-    left: 3%;
-    right: 3%;
-    width: 30%;
-}   
+    background-color: hsl(180, 80%, 25%);
+}
 
 a {
-    text-decoration: none;
-    color: var(--text-color);
-    background-color: rgba(45, 45, 45, 0.2); /* background color of the element, WITH 'alpha'|'opacity' at the fourth position.  */
+    /* /text-decoration: none; */
+    /* color: var(--text-color); */
+    /* background-color: rgba(45, 45, 45, 0.2); background color of the element, WITH 'alpha'|'opacity' at the fourth position.  */
 }
 a:hover {
-    background-color: rgba(0, 0, 255, 0.5);
+    /* background-color: rgba(0, 0, 255, 0.5); */
 }
 
 .injected-text {
