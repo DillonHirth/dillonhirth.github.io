@@ -5,7 +5,7 @@ nav {
 
 }
 p {
-
+    margin: 0px 0px 0px 0px;
 }
 h1 {
 
@@ -19,22 +19,30 @@ nav li {
     display: inline;
     margin-right: 20px;
 }
+main {
+    margin-top: relative;
+    position: relative;
+    margin-bottom: 1px;
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 251, 0);
+}
 #navbar {
     background-color: orangered;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: auto;
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 100%;
 }
 #navbar-header{
     background-color: dodgerblue;
-    width: 90%;
-    height: 50%;
+    width: 20%;
+    height: auto;
     text-align: center;
-    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
 #bio-para{
-
+    background-color: rgb(0, 255, 34);
 }
