@@ -32,12 +32,10 @@ header {
 }
 #navbar-header{
     text-align: center; /* centers the text within */
+    margin: 5px auto;
 }
 #navbar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
+    width: auto;
     background-color: #323a45; /* hue, saturation, lightness */
 }
 #bioPara {
