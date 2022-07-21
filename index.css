@@ -7,16 +7,33 @@ body {
     color: #ccc6cf
 }
 
-
-
 /* nav.navbar {
     background-color: #5e548e;
 } */
+.primary-background-color {
+    background-color: #0a192f;
+}
 
-#name {
+h1 {
     font-size: 4.5em;
     font-weight: 700;
-    text-shadow: 3px 3px 3px #00f5d449;
+    text-shadow: 3px 3px 3px #00f5d46b;
+}
+
+h2 {
+    font-size: 4.3em;
+    font-weight: 700;
+    text-shadow: 3px 3px 3px #00f5d46b;
+}
+
+h3 {
+    font-size: 2.3em;
+    font-weight: 200;
+}
+
+h4 {
+    font-size: 1.5em;
+    font-weight: 200;
 }
 
 /* change the link color */
@@ -31,12 +48,16 @@ body {
     transition: color 200ms;
 }
 
-.w-full {
-    width: 100%;
+.h-full {
+    height: 100vh;
 }
 
-.h-full {
-    height: 100%;
+.h-half {
+    height: 50vh;
+}
+
+.back-z-index {
+    z-index: -10;
 }
 
 .text-bright-green {
@@ -48,5 +69,5 @@ body {
 }
 
 .text-very-light-green {
-    color: #d6fffa;
+    color: #e2fffc;
 }
