@@ -40,12 +40,18 @@ h4 {
 .nav-link {
     color: #00f5d4;
     font-weight: 1000;
+    transition: all 100ms ease-in-out;
 }
 
 .nav-link:hover {
-    color: #00c7eb;
-    font-weight: 1000;
-    transition: color 200ms;
+    color: #6439ff;
+    font-size: 1.1em;
+}
+
+/* 00c7eb */
+.nav-link:not(:hover) {
+    color: #00f5d4;
+    font-size: 1.0em;
 }
 
 .h-full {
@@ -70,4 +76,8 @@ h4 {
 
 .text-very-light-green {
     color: #e2fffc;
+}
+
+svg.skills {
+    color: #00f5d4;
 }
