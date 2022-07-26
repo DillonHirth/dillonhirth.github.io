@@ -81,3 +81,8 @@ h4 {
 svg.skills {
     color: #00f5d4;
 }
+
+img#selfie {
+    width: 300px;
+    height: 300px;
+}
