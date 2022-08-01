@@ -11,7 +11,21 @@ body {
     background-color: #5e548e;
 } */
 .primary-background-color {
-    background-color: #0a192f;
+    background-color: #0c1d38;
+    max-width: 80vw;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 5px #09172bd7;
+}
+
+.card-background-color {
+    background-color: #142538;
+    border-radius: 3px;
+    box-shadow: 2px 4px 3px #0b1520;
+}
+
+.primary-color {
+    color: #00f5d4 !important;
+    border-color: #00f5d4 !important;
 }
 
 h1 {
@@ -78,6 +92,13 @@ h4 {
     color: #e2fffc;
 }
 
+.project-card {}
+
 svg.skills {
     color: #00f5d4;
+}
+
+img#selfie {
+    width: 300px;
+    height: 300px;
 }
