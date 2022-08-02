@@ -67,14 +67,20 @@ h4 {
 
 /* change the link color */
 .nav-link {
-    color: #00f5d4;
     font-weight: 1000;
     transition: all 100ms ease-in-out;
 }
 
 .nav-link:hover {
-    color: #6439ff;
     font-size: 1.1em;
+}
+
+.link-color {
+    color: #00f5d4;
+}
+
+.link-color:hover {
+    color: #6439ff;
 }
 
 /* 00c7eb */
