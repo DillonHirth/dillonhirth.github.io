@@ -13,11 +13,11 @@ font shadow: #00f5d46b
     --secondary-background-color: #0c1d38;
     --tertiary-background-color: #142538;
     --card-background-color: #0e2242;
-    --primary-font-color: #00f5d4;
-    --secondary-font-color: #ccc6cf;
+    --primary-color: #00f5d4;
+    --primary-color-light: #7df3e3;
+    --whiteish: #e2e2e2;
     --font-hover: #8462ff;
     --font-shadow: #00f5d46b;
-    --primary-icon-color: #00f5d4;
 }
 
 body {
@@ -27,30 +27,6 @@ body {
     font-family: "Nunito", sans-serif;
     background-color: #0a192f;
     color: #ccc6cf
-}
-
-.primary-background-color {
-    background-color: var(--secondary-background-color);
-    max-width: 80vw;
-    border-radius: 3px;
-    box-shadow: 0px 0px 5px 5px #09172bd7;
-}
-
-.project-card-container {
-    background-color: var(--card-background-color);
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px #0b1520;
-    transition: all 100ms ease-in-out;
-}
-
-.project-card-container:hover {
-    box-shadow: 0px 14px 10px #0b1520e8;
-    transform: translate(0, -10px);
-}
-
-.primary-color {
-    color: #00f5d4 !important;
-    border-color: #00f5d4 !important;
 }
 
 h1 {
@@ -75,6 +51,36 @@ h4 {
     font-weight: 200;
 }
 
+p {
+    color: var(--whiteish);
+}
+
+.primary-background-color {
+    background-color: var(--secondary-background-color);
+    max-width: 80vw;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 5px #09172bd7;
+}
+
+.project-card-container {
+    background-color: var(--card-background-color);
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px #0b1520;
+    transition: all 100ms ease-in-out;
+}
+
+.project-card-container:hover {
+    box-shadow: 0px 14px 10px #0b1520e8;
+    transform: translate(0, -10px);
+}
+
+hr.line-style {
+    color: var(--primary-color);
+    opacity: 1;
+    border-top-width: 2px;
+    max-width: 45%;
+}
+
 /* change the link color */
 .nav-link {
     font-weight: 1000;
@@ -86,7 +92,7 @@ h4 {
 }
 
 .link-color {
-    color: var(--primary-font-color);
+    color: var(--primary-color);
 }
 
 .link-color:hover {
@@ -95,7 +101,7 @@ h4 {
 
 /* 00c7eb */
 .nav-link:not(:hover) {
-    color: var(--primary-font-color);
+    color: var(--primary-color);
     font-size: 1.0em;
 }
 
@@ -113,19 +119,16 @@ h4 {
 }
 
 .text-bright-green {
-    color: #00f5d4;
+    color: var(--primary-color);
 }
 
 .text-light-green {
-    color: #a0fff2;
+    color: var(--primary-color-light);
 }
 
-.text-very-light-green {
-    color: #e2fffc;
-}
 
 svg.skills {
-    color: var(--primary-icon-color);
+    color: var(--primary-color);
 }
 
 img#selfie {
