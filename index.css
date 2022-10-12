@@ -137,3 +137,7 @@ img#selfie {
     border-radius: 6px;
     box-shadow: 6px 6px 4px #0b1520;
 }
+
+.testClass {
+    background-color: #7df3e3;
+}
