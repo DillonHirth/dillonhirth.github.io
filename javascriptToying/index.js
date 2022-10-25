@@ -1,18 +1,52 @@
-const p1Button = document.querySelector("#p1Score")
-const p1Score = document.querySelector("#p1")
-const p2Button = document.querySelector("#p2Score")
-const p2Score = document.querySelector("#p2")
 const scoreReset = document.querySelector("#scoreReset")
+const maxScore = document.querySelector("#maxScoreSelector")
+let gameOver = false
+let maxScoreSelected = false
 
-p1Button.addEventListener('click', function () {
-    p1Score.innerText = +p1Score.innerText + 1
+const player1 = {
+    button: document.querySelector("#p1Score"),
+    displayScore: document.querySelector("#p1"),
+    score: 0
+}
+
+const player2 = {
+    button: document.querySelector("#p2Score"),
+    displayScore: document.querySelector("#p2"),
+    score: 0
+}
+
+player1.button.addEventListener('click', function () {
+    score(player1, player2) //score(scoringPlayer, failingPlayer)
 })
 
-p2Button.addEventListener('click', function () {
-    p2Score.innerText = +p2Score.innerText + 1
+player2.button.addEventListener('click', function () {
+    score(player2, player1) //score(scoringPlayer, failingPlayer)
 })
 
 scoreReset.addEventListener('click', function () {
-    p2Score.innerText = 0
-    p1Score.innerText = 0
+    player2.displayScore.innerText = 0
+    player1.displayScore.innerText = 0
+    player1.displayScore.classList.remove('green', 'red')
+    player2.displayScore.classList.remove('green', 'red')
+    gameOver = false
 })
+
+maxScore.addEventListener('change', function () {
+    player2.displayScore.innerText = 0
+    player1.displayScore.innerText = 0
+    player1.displayScore.classList.remove('green', 'red')
+    player2.displayScore.classList.remove('green', 'red')
+    gameOver = false
+    maxScoreSelected = true
+})
+
+function score(scoringPlayer, failingPlayer) {
+    if (!gameOver && maxScoreSelected) {
+        scoringPlayer.displayScore.innerText = +scoringPlayer.displayScore.innerText + 1
+        if (+maxScore.value === +scoringPlayer.displayScore.innerText) {
+            gameOver = true
+            failingPlayer.displayScore.classList.add('red')
+            scoringPlayer.displayScore.classList.add('green')
+        }
+    }
+}
