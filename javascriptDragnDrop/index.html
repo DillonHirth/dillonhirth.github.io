@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,800&family=Open+Sans:wght@700;800&family=Poppins:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- <link href="./resources/CSS/index.css" type="text/css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <main class="container text-center" draggable="true">
+        <div class="row">
+            <h1><span id="p1">0</span> to <span id="p2">0</span></h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <button class="btn btn-primary btn-lg" id="p1Score">p1 scored</button>
+                <button class="btn btn-primary btn-lg" id="p2Score">p2 scored</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary btn-lg" id="scoreReset">score reset</button>
+            </div>
+            <div class="col-2">
+                <select id="maxScoreSelector" class="form-select p-2 m-1 " aria-label="Default select example">
+                    <option value="0" selected disabled hidden>Max Score</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
