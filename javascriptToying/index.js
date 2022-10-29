@@ -1,23 +1,39 @@
+class Player {
+    constructor(name) {
+        this._name = name;
+        this._score = 0;
+        this._wins = 0;
+        this._button = null;
+        this._displayScore = null;
+    }
+}
+
+
+
 const scoreReset = document.querySelector("#scoreReset")
 const maxScore = document.querySelector("#maxScoreSelector")
+let playerCount = 0
 let gameOver = false
 let maxScoreSelected = false
+let playerList = {}
 
+function createPlayer(playerName) {
+    let player = new Player(playerName)
+    return player
+}
 
-
-// player2.button.addEventListener('click', function () {
-//     score(player2, player1) //score(scoringPlayer, failingPlayer)
-// })
-
-
-
-function score(scoringPlayer, failingPlayer) {
+function score(scoringPlayer) {
+    console.log(scoringPlayer + " scored 1 point")
+    console.log(scoringPlayer._displayScore + " scored 2 point")
+    console.log(scoringPlayer._name + " scored 3 point")
+    console.log(scoringPlayer._displayScore.innerText)
     if (!gameOver && maxScoreSelected) {
-        scoringPlayer.displayScore.innerText = +scoringPlayer.displayScore.innerText + 1
-        if (+maxScore.value === +scoringPlayer.displayScore.innerText) {
+        scoringPlayer._displayScore.innerText = +scoringPlayer._displayScore.innerText + 1
+        console.log(parseInt(scoringPlayer._displayScore.innerText) + 1)
+        if (+maxScore.value === +scoringPlayer._displayScore.innerText) {
             gameOver = true
-            failingPlayer.displayScore.classList.add('red')
-            scoringPlayer.displayScore.classList.add('green')
+            //failingPlayer.displayScore.classList.add('red')
+            scoringPlayer._displayScore.classList.add('green')
         }
     }
 }
@@ -65,55 +81,45 @@ function dragLeave(e) {
 function drop(e) {
     e.preventDefault();
     e.target.classList.remove('drag-over');
+
     // get the draggable element
     const id = e.dataTransfer.getData('text/plain');
     let draggable = document.getElementById(id).cloneNode(true);
 
-    draggable.id = "p2Score"
+    //create a new player
+    let playerName = "player" + playerCount
+    //add player to playerlist
+    playerList[playerName] = createPlayer(playerName)
+
+    draggable.id = playerName
     // add it to the drop target
     e.target.appendChild(draggable);
 
     // display the draggable element
     draggable.classList.remove('hide');
 
-    const player2 = {
-        button: document.querySelector("#p2Score"),
-        displayScore: document.querySelector("#p2"),
-        score: 0
-    }
+    playerList[playerName]._button = document.querySelector("#" + playerName)
+    playerList[playerName]._displayScore = document.querySelector("#p2")
 
-    const player1 = {
-        button: document.querySelector("#p1Score"),
-        displayScore: document.querySelector("#p1"),
-        score: 0
-    }
-    player2.button.addEventListener('click', function () {
-        score(player2, player1) //score(scoringPlayer, failingPlayer)
+    playerList[playerName]._button.addEventListener('click', function () {
+        console.log(playerName + "scored")
+        score(playerList[playerName]) //score(scoringPlayer, failingPlayer)
     })
-
-
-
-    player1.button.addEventListener('click', function () {
-        score(player1, player2) //score(scoringPlayer, failingPlayer)
-    })
-
-
-    maxScore.addEventListener('change', function () {
-        player2.displayScore.innerText = 0
-        player1.displayScore.innerText = 0
-        player1.displayScore.classList.remove('green', 'red')
-        player2.displayScore.classList.remove('green', 'red')
-        gameOver = false
-        maxScoreSelected = true
-    })
-
-    scoreReset.addEventListener('click', function () {
-        player2.displayScore.innerText = 0
-        player1.displayScore.innerText = 0
-        player1.displayScore.classList.remove('green', 'red')
-        player2.displayScore.classList.remove('green', 'red')
-        gameOver = false
-    })
-
-
 }
+
+maxScore.addEventListener('change', function () {
+    for (const key in playerList) {
+        playerList[key]._displayScore.innerText = 0
+        playerList[key]._displayScore.classList.remove('green', 'red')
+    }
+    gameOver = false
+    maxScoreSelected = true
+})
+
+scoreReset.addEventListener('click', function () {
+    for (const key in playerList) {
+        playerList[key]._displayScore.innerText = 0
+        playerList[key]._displayScore.classList.remove('green', 'red')
+    }
+    gameOver = false
+})
