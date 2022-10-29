@@ -23,13 +23,8 @@ function createPlayer(playerName) {
 }
 
 function score(scoringPlayer) {
-    console.log(scoringPlayer + " scored 1 point")
-    console.log(scoringPlayer._displayScore + " scored 2 point")
-    console.log(scoringPlayer._name + " scored 3 point")
-    console.log(scoringPlayer._displayScore.innerText)
     if (!gameOver && maxScoreSelected) {
         scoringPlayer._displayScore.innerText = +scoringPlayer._displayScore.innerText + 1
-        console.log(parseInt(scoringPlayer._displayScore.innerText) + 1)
         if (+maxScore.value === +scoringPlayer._displayScore.innerText) {
             gameOver = true
             //failingPlayer.displayScore.classList.add('red')
@@ -99,12 +94,12 @@ function drop(e) {
     draggable.classList.remove('hide');
 
     playerList[playerName]._button = document.querySelector("#" + playerName)
-    playerList[playerName]._displayScore = document.querySelector("#p2")
+    playerList[playerName]._displayScore = document.querySelector("#" + playerName + "_score")
 
     playerList[playerName]._button.addEventListener('click', function () {
-        console.log(playerName + "scored")
         score(playerList[playerName]) //score(scoringPlayer, failingPlayer)
     })
+    playerCount = playerCount + 1
 }
 
 maxScore.addEventListener('change', function () {
