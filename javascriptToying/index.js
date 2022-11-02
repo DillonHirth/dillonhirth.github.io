@@ -27,8 +27,12 @@ function score(scoringPlayer) {
         scoringPlayer._displayScore.innerText = +scoringPlayer._displayScore.innerText + 1
         if (+maxScore.value === +scoringPlayer._displayScore.innerText) {
             gameOver = true
-            //failingPlayer.displayScore.classList.add('red')
             scoringPlayer._displayScore.classList.add('green')
+            for (const key in playerList) {
+                if (playerList[key] != scoringPlayer) {
+                    playerList[key]._displayScore.classList.add('red')
+                }
+            }
         }
     }
 }
@@ -83,10 +87,12 @@ function drop(e) {
 
     //create a new player
     let playerName = "player" + playerCount
+
     //add player to playerlist
     playerList[playerName] = createPlayer(playerName)
 
     draggable.id = playerName
+    draggable.innerText = playerName
     // add it to the drop target
     e.target.appendChild(draggable);
 
