@@ -12,7 +12,7 @@ class Player {
 
 const scoreReset = document.querySelector("#scoreReset")
 const maxScore = document.querySelector("#maxScoreSelector")
-let playerCount = 0
+let playerCount = 1
 let gameOver = false
 let maxScoreSelected = false
 let playerList = {}
@@ -24,6 +24,7 @@ function createPlayer(playerName) {
 
 function score(scoringPlayer) {
     if (!gameOver && maxScoreSelected) {
+        console.log(scoringPlayer._displayScore.innerText)
         scoringPlayer._displayScore.innerText = +scoringPlayer._displayScore.innerText + 1
         if (+maxScore.value === +scoringPlayer._displayScore.innerText) {
             gameOver = true
@@ -90,6 +91,12 @@ function drop(e) {
 
     //add player to playerlist
     playerList[playerName] = createPlayer(playerName)
+
+    //create score text
+    const new_buddy = `<h1>${playerName} score: <span id="${playerName}_score">${playerList[playerName]._score}</span></h1>`
+    const scoreBoard = document.querySelector('#scoreDisplay')
+    scoreBoard.insertAdjacentHTML('beforeend', new_buddy)
+
 
     draggable.id = playerName
     draggable.innerText = playerName
