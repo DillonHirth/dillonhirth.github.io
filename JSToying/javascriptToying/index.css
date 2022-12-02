@@ -23,17 +23,14 @@ h1 {
     color: #323330;
 }
 
-.box {
-    height: 150px;
-    width: 150px;
-    border: solid 3px #ccc;
-    margin: 10px;
-}
-
 .drag-over {
     border: dashed 3px red;
 }
 
 .hide {
     display: none;
+}
+
+#scoreDisplay {
+    background-color: lightblue;
 }

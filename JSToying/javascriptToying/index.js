@@ -11,7 +11,8 @@ class Player {
 
 
 const scoreReset = document.querySelector("#scoreReset")
-const maxScore = document.querySelector("#maxScoreSelector")
+const maxScoreSelector = document.querySelector("#maxScoreSelector")
+const playerCountSelector = document.querySelector("#playerCountSelector")
 let playerCount = 1
 let gameOver = false
 let maxScoreSelected = false
@@ -26,7 +27,7 @@ function score(scoringPlayer) {
     if (!gameOver && maxScoreSelected) {
         console.log(scoringPlayer._displayScore.innerText)
         scoringPlayer._displayScore.innerText = +scoringPlayer._displayScore.innerText + 1
-        if (+maxScore.value === +scoringPlayer._displayScore.innerText) {
+        if (+maxScoreSelector.value === +scoringPlayer._displayScore.innerText) {
             gameOver = true
             scoringPlayer._displayScore.classList.add('green')
             for (const key in playerList) {
@@ -115,7 +116,7 @@ function drop(e) {
     playerCount = playerCount + 1
 }
 
-maxScore.addEventListener('change', function () {
+maxScoreSelector.addEventListener('change', function () {
     for (const key in playerList) {
         playerList[key]._displayScore.innerText = 0
         playerList[key]._displayScore.classList.remove('green', 'red')

@@ -20,19 +20,16 @@
 <body>
     <main>
         <div class="container-xxl">
-            <div class="row">
-                <div class="col-3">
-                    <div class="row" id="scoreDisplay">
-                        <!-- <h1><span id="player0_score">0</span> to <span id="player1_score">0</span></h1> -->
-                    </div>
-                    <div class="row">
+            <div class="row p-2 m-3">
+                <div class="col-2">
+                    <div class="row p-1 m-2">
                         <button class="btn btn-primary btn-lg item" draggable="true" id="player">player</button>
                     </div>
-                    <div class="row">
+                    <div class="row p-1 m-2">
                         <button class="btn btn-primary btn-lg" id="scoreReset">score reset</button>
                     </div>
-                    <div class="row">
-                        <select id="maxScoreSelector" class="form-select p-2 m-1 " aria-label="Default select example">
+                    <div class="row p-1 m-2">
+                        <select id="maxScoreSelector" class="form-select p-2 m-1" aria-label="Default select example">
                             <option value="0" selected disabled hidden>Max Score</option>
                             <option value="5">5</option>
                             <option value="7">7</option>
@@ -40,17 +37,11 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-9">
-                    <div id="scorebox" class="row">
-                        <!-- <h1><span id="player0_score">0</span></h1> -->
+                <div class="col-10">
+                    <div id="scoreDisplay" class="h-100">
                     </div>
                     <div class="row">
-                        <div class="col-12">
-                            <div class="box">
-                            </div>
-                            <div class="box">
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
